@@ -1,13 +1,10 @@
 <?php
 
-namespace PowerLog\Views\Templates;
 
-use PowerLog\Views\View;
-
-class Footer extends View
+class Footer
 {
 
-    public function view($data){
+    public function view($data = []){
         echo '
                      <footer class="footer">
                         <div class="content has-text-centered">
