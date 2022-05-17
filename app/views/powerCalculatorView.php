@@ -1,7 +1,7 @@
 <?php
 
 
-class PowerCalculator
+class PowerCalculatorView
 {
 
     public function view($data = []){

@@ -1,7 +1,7 @@
 <?php
 
 
-class PrLog
+class PrLogView
 {
 
     public function view($data = []){

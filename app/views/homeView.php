@@ -1,7 +1,7 @@
 <?php
 
 
-class Home
+class HomeView
 {
 
     public function view($data = []){

@@ -1,7 +1,7 @@
 <?php
 
 
-class Footer
+class FooterView
 {
 
     public function view($data = []){

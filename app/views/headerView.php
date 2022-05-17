@@ -1,6 +1,6 @@
 <?php
 
-class Header
+class HeaderView
 {
 
     public function view($data = []){

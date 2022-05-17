@@ -1,11 +1,11 @@
 <?php
 
 
-class Navbar
+class NavbarView
 {
 
     public function view($data = []){
-        echo sprintf("
+        echo "
             <nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">
                 <div class=\"navbar-brand\">
                     <a class=\"navbar-item\" href=\"" . BASE_URL . "/home\">
@@ -35,6 +35,9 @@ class Navbar
                         </a>
                     </div>
                     <div class=\"navbar-end\">
+                ";
+            if(empty($data["username"])){
+                echo "      
                         <div class=\"navbar-item\">
                             <div class=\"buttons\">
                                 <a href=\"" . BASE_URL . "/signup\" class=\"button is-success\">
@@ -45,6 +48,24 @@ class Navbar
                                 </a>
                             </div>
                         </div>
+                        ";
+            } else {
+                echo "      
+                        <div class=\"navbar-item\">
+                            <div style='margin-right: 15px;'>
+                                Loged as:<span class='has-text-weight-semibold'> ". htmlspecialchars($data["username"]) ."</span>
+                            </div>
+                            <div class=\"buttons\">
+                                <a href=\"" . BASE_URL . "/logout\" class=\"button is-info\">
+                                    Log out
+                                </a>
+                            </div>
+                        </div>
+                        ";
+            }
+
+
+            echo    "
                     </div>
                 </div>
             </nav>
@@ -75,6 +96,6 @@ class Navbar
             
                 });
             </script>
-        ", BASE_URL);
+        ";
     }
 }
