@@ -46,7 +46,7 @@ class PrLogView
         echo '
                                     <input class="button is-block is-link is-large is-fullwidth" type="submit" value="Log my performance!">
                                 </form>
-                            </div>
+                            </div> 
                     </div>
                 </div>
             </section>

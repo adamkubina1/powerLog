@@ -7,24 +7,40 @@ include __DIR__ . '/app/views/navbarView.php';
 include __DIR__ . '/app/views/footerView.php';
 include __DIR__ . '/app/config.php';
 include __DIR__ . '/app/controlers/userControler.php';
+include __DIR__ . '/app/controlers/exercisesControler.php';
+include __DIR__ . '/app/controlers/performancesControler.php';
 
 
 $userControler = new UserControler();
 $userControler->validateUser();
 
 $data = [];
-$data["title"] = "Exercise standarts";
+$data["title"] = "Exercise standards";
 
 //If user is not logged he is redirected to signup page
 if (!empty($_SESSION['userid']) && !empty($_SESSION['username'])) {
     $data["username"] = $_SESSION['username'];
 } else {
-
     header('Location: signup');
     exit();
-
 }
 
+$exControler = new ExercisesControler();
+
+$data["exercises"] = $exControler->getAllExercises();
+
+if(!empty($_GET["exercise"])){
+    $perControler = new PerformancesControler();
+
+    $userData = $perControler->getUserPerformance();
+    $allData = $perControler->getAllPerformances();
+
+    $presentingData = $perControler->createDataForExerciseStandards($userData, $allData);
+
+    if(!empty($presentingData)){
+        $data["exerciseStandard"] = $presentingData;
+    }
+}
 
 $header = new HeaderView();
 $navbar = new NavbarView();

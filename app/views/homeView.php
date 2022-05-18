@@ -15,11 +15,11 @@ class HomeView
                         <hr class="login-hr">
                         <div class="columns is-centered">
                             <div class="column is-4 panel is-info">
-                                <a href="' . BASE_URL . '/powerCalculator">
+                                <a href="' . BASE_URL . '/progressTracker">
                                     <figure class="image ">
                                         <img src="' . BASE_URL . '/public/imgs/weightlift-home1.svg" />
                                     </figure>
-                                    <h2 class="is-size-4 has-text-dark is-bold panel-heading" style="margin-top: 10px;">Calculate your power level</h2>
+                                    <h2 class="is-size-4 has-text-dark is-bold panel-heading" style="margin-top: 10px;">Track your progress</h2>
                                 </a>
                             </div>
                             <div class="column is-4 panel is-info">

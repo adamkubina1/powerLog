@@ -22,8 +22,8 @@ class NavbarView
                 <div id=\"navbarBasicExample\" class=\"navbar-menu\">
             
                     <div class=\"navbar-start\">
-                        <a href=\"" . BASE_URL . "/powerCalculator\" class=\"navbar-item\">
-                            Power calculator
+                        <a href=\"" . BASE_URL . "/progressTracker\" class=\"navbar-item\">
+                            Progress tracker
                         </a>
             
                         <a href=\"" . BASE_URL . "/exerciseStandards\" class=\"navbar-item\">
