@@ -1,7 +1,7 @@
 <?php
 
 
-class PowerCalculator
+class ExerciseStandartsView
 {
 
     public function view($data = []){

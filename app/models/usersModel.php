@@ -4,7 +4,7 @@ class UsersModel {
     private $connection;
 
     function __construct(){
-        require_once __DIR__ . '/../db.php';
+        require __DIR__ . '/../db.php';
         $this->connection = $db;
     }
 

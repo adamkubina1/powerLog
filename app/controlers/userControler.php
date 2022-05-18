@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . '/../models/usersModel.php';
+include_once __DIR__ . '/../models/usersModel.php';
 
 
 
