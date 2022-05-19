@@ -40,13 +40,13 @@ class ExerciseStandartsView
         if(!empty($data["exerciseStandard"])){
             echo '        <div class="columns has-text-centered">
                                 <div class="column">
-                                    <p>Your worst PR is better than</p>';
+                                    <p>Your worst PR at <span class="is-size-4"> '. htmlspecialchars($data["exerciseStandard"]["worstPerformance"]).' kg</span> is better than</p>';
             echo '<span class="is-size-3">' . htmlspecialchars($data["exerciseStandard"]["worst"]) . ' %</span>';
             echo '
                                 </div>';
             echo '
                                  <div class="column">
-                                    <p>Your best PR is better than</p>';
+                                    <p>Your best PR at <span class="is-size-4">'. htmlspecialchars($data["exerciseStandard"]["bestPerformance"]).' kg</span> is better than</p>';
             echo '<span class="is-size-3">' . htmlspecialchars($data["exerciseStandard"]["best"]) . ' %</span>';
             echo '                        
                                  </div>
@@ -58,7 +58,7 @@ class ExerciseStandartsView
                         </div>';
         if(empty($data["exerciseStandard"])){
             echo '      <p class="has-text-white">
-                            <a href="' . BASE_URL . '/prLog">To see results log your PR!</a>
+                            <a href="' . BASE_URL . '/prLog">Log your PR here!</a>
                         </p>';
         }
 

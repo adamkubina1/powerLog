@@ -12,7 +12,7 @@ class SignupView
                         <div class=\"column is-8 is-offset-2\">
                             <h3 class=\"title has-text-white\">Sign up</h3>
                             <hr class=\"login-hr\">
-                            <p class=\"subtitle has-text-white\">Sign up to unlock features like PR log and exercise standards!</p>
+                            <p class=\"subtitle has-text-white\">Sign up to unlock features like PR log, exercise standards and progress tracker!</p>
                         </div>
                         <div class=\"box\">
                             <img src=\"" . BASE_URL . "/public/imgs/barbell2-logo.svg\" width=\"120\" height=\"120\" class=\"is-rounded\">

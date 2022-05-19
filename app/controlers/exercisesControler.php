@@ -13,4 +13,14 @@ class ExercisesControler{
         $exercises = $this->exercisesModel->getAllExercises();
         return $exercises->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    function getExerciseName($exercise_id){
+        $exercise =  $this->exercisesModel->getExerciseById($exercise_id)->fetchAll();
+
+        if(count($exercise) < 1){
+            return "";
+        }
+
+        return $exercise[0]["name"];
+    }
 }

@@ -53,12 +53,12 @@ class PerformancesControler{
         if(empty($best) || empty($worst)){
             return [];
         }
-        $countLatest = 1;
-        $countBest = 1;
-        $countWorst = 1;
-        $count = 1;
+        $countLatest = 0;
+        $countBest = 0;
+        $countWorst = 0;
+        $count = 0;
 
-        $totalCount = count($allPerformances);
+        $totalCount = count($allPerformances) - 1;
         if($totalCount == 0){
             return [];
         }
@@ -83,7 +83,10 @@ class PerformancesControler{
 
         $resultArray = [];
         $resultArray["best"] = $bestPrc;
+        $resultArray["bestPerformance"] = $best["performance"];
+
         $resultArray["worst"] = $worstPrc;
+        $resultArray["worstPerformance"] = $worst["performance"];
 
         return $resultArray;
     }
@@ -139,6 +142,19 @@ class PerformancesControler{
             }
         }
 
+
+        return $newArray;
+    }
+
+    function prepareDataForGraph($userPerformance){
+        $newArray = [];
+
+        foreach ($userPerformance as $up){
+            //Extracts date from timestamp, there is probably cleaner way to do this, but no time xd
+            $dateArr = explode(' ', $up["timestamp"]);
+
+            $newArray[] = array("y" => $up["performance"], "label" => $dateArr[0]);
+        }
 
         return $newArray;
     }
