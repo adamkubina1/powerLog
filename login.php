@@ -1,17 +1,11 @@
 <?php
-session_start();
+
+require_once __DIR__ . '/app/config.php';
 
 if (!empty($_SESSION['userid'])){
     header('Location: home');
     exit();
 }
-
-include __DIR__ . '/app/views/headerView.php';
-include __DIR__ . '/app/views/loginView.php';
-include __DIR__ . '/app/views/navbarView.php';
-include __DIR__ . '/app/views/footerView.php';
-include __DIR__ . '/app/config.php';
-include __DIR__ . '/app/controlers/userControler.php';
 
 
 

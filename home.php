@@ -1,13 +1,6 @@
 <?php
-session_start();
 
-include __DIR__ . '/app/views/headerView.php';
-include __DIR__ . '/app/views/homeView.php';
-include __DIR__ . '/app/views/navbarView.php';
-include __DIR__ . '/app/views/footerView.php';
-include __DIR__ . '/app/config.php';
-include __DIR__ . '/app/controlers/userControler.php';
-
+require_once __DIR__ . '/app/config.php';
 
 $userControler = new UserControler();
 $userControler->validateUser();
