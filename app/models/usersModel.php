@@ -9,7 +9,7 @@ class UsersModel {
     }
 
     function getUserById($id){
-        $userQuery = $this->connection->prepare('SELECT user_id FROM users WHERE user_id=:id LIMIT 1;');
+        $userQuery = $this->connection->prepare('SELECT * FROM users WHERE user_id=:id LIMIT 1;');
         $userQuery->execute([
             ':id'=>$id
         ]);
@@ -38,6 +38,14 @@ class UsersModel {
             ':password'=>$password,
             ':gender'=>$gender,
             ':weight'=>$weight,
+        ]);
+    }
+
+    function updateUserPassword($userId, $newPassword){
+        $userQuery = $this->connection->prepare('UPDATE users SET password=:newPassword WHERE user_id=:id LIMIT 1;');
+        $userQuery->execute([
+            ':id'=>$userId,
+            ':newPassword'=>$newPassword
         ]);
     }
 }

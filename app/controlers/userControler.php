@@ -101,4 +101,31 @@ class UserControler {
             }
         }
     }
+
+    function validatePasswordChange(): array{
+        $errors = [];
+
+        $user = $this->userModel->getUserById($_SESSION["userid"])->fetch(PDO::FETCH_ASSOC);
+
+        if(!empty($user)) {
+            if (!password_verify($_POST['oldPassword'], $user['password'])){
+                $errors["oldPassword"] = "Wrong password entered";
+            }
+        } else {
+            $errors["fail"] = "Something is wrong";
+        }
+
+        if (empty($_POST['newPassword']) || (strlen($_POST['newPassword']) < 8)){
+            $errors['newPassword'] = 'Password must be at least 8 characters';
+        }
+        if ($_POST['newPassword'] != $_POST['newPasswordCheck']){
+            $errors['newPasswordCheck'] = 'Passwords must match';
+        }
+
+        return $errors;
+    }
+
+    function changePassword(){
+        $this->userModel->updateUserPassword($_SESSION["userid"], password_hash($_POST["newPassword"], PASSWORD_DEFAULT));
+    }
 }

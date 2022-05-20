@@ -98,7 +98,7 @@ class SignupView
         echo "
                                    </div>
                                 </div>
-                                <input class=\"button is-block is-danger is-large is-fullwidth\" type=\"submit\" value=\"Sign up!\">
+                                <input class=\"button is-block is-danger is-medium is-fullwidth\" type=\"submit\" value=\"Sign up!\">
                             </form>
             
                         </div>

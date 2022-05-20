@@ -55,6 +55,22 @@ class NavbarView
                             <div style='margin-right: 15px;'>
                                 Loged as:<span class='has-text-weight-semibold'> ". htmlspecialchars($data["username"]) ."</span>
                             </div>
+                        </div>
+                        <div class=\"navbar-item\">
+                            <div class=\"buttons\">
+                                <a href=\"" . BASE_URL . "/social\" class=\"button is-success\">
+                                    Settings
+                                </a>
+                            </div>
+                        </div>
+                        <div class=\"navbar-item\">
+                            <div class=\"buttons\">
+                                <a href=\"" . BASE_URL . "/settings\" class=\"button is-warning\">
+                                    Settings
+                                </a>
+                            </div>
+                        </div>
+                        <div class=\"navbar-item\">
                             <div class=\"buttons\">
                                 <a href=\"" . BASE_URL . "/logout\" class=\"button is-info\">
                                     Log out
