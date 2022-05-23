@@ -41,8 +41,6 @@ class LoginView
                         </div>
                         <p class=\"has-text-white\">
                             <a href=\"" . BASE_URL . "/signup\">Sign Up</a>
-                            <span>|</span>
-                            <a href=\"\">Forgot Password?</a>
                         </p>
                 </div>
             </section>

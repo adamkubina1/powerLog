@@ -2,14 +2,17 @@
 
 include_once __DIR__ . '/../models/exercisesModel.php';
 include_once __DIR__ . '/../models/performancesModel.php';
+include_once __DIR__ . '/../models/usersModel.php';
 
 class PerformancesControler{
     private $performancesModel;
     private $exercisesModel;
+    private $usersModel;
 
     function __construct() {
         $this->performancesModel = new PerfomancesModel();
         $this->exercisesModel = new ExercisesModel();
+        $this->usersModel = new UsersModel();
     }
 
 
@@ -23,7 +26,6 @@ class PerformancesControler{
             $errors["exercise"] = "This exercise does not exist in our system";
         }
 
-
         $performance = intval($_POST["performance"]);
         //Intval is 0 if the field is empty or different format
         if($performance <= 0 || $performance > 1000) {
@@ -34,15 +36,25 @@ class PerformancesControler{
     }
 
     function addPerformance(){
-        $this->performancesModel->insertPerfomance($_SESSION["userid"],$_POST["exercise"], intval($_POST["performance"]));
+        $user = $this->usersModel->getUserById($_SESSION["userid"])->fetch(PDO::FETCH_ASSOC);
+
+        $this->performancesModel->insertPerfomance($_SESSION["userid"],$_POST["exercise"], intval($_POST["performance"]), $user["gender"], $user["weight"]);
     }
 
     function getUserPerformance() {
         return $this->performancesModel->getPerformancesByUserId($_SESSION["userid"], $_GET["exercise"])->fetchAll();
     }
 
+    function getFriendPerformance() {
+        $user = $this->usersModel->getUserByUserName($_GET["name"])->fetch(PDO::FETCH_ASSOC);
+
+        return $this->performancesModel->getPerformancesByUserId($user["user_id"], $_GET["exercise"])->fetchAll();
+    }
+
     function getAllPerformances() {
-        return $this->performancesModel->getPerformancesByExercise($_GET["exercise"])->fetchAll();
+        $user = $this->usersModel->getUserById($_SESSION["userid"])->fetch(PDO::FETCH_ASSOC);
+
+        return $this->performancesModel->getPerformancesByParams($_GET["exercise"], $user["gender"], $user["weight"])->fetchAll();
     }
 
     function createDataForExerciseStandards($userPerformance, $allPerformances){
@@ -53,7 +65,6 @@ class PerformancesControler{
         if(empty($best) || empty($worst)){
             return [];
         }
-        $countLatest = 0;
         $countBest = 0;
         $countWorst = 0;
         $count = 0;

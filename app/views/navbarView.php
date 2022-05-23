@@ -59,7 +59,7 @@ class NavbarView
                         <div class=\"navbar-item\">
                             <div class=\"buttons\">
                                 <a href=\"" . BASE_URL . "/social\" class=\"button is-success\">
-                                    Settings
+                                    Social
                                 </a>
                             </div>
                         </div>

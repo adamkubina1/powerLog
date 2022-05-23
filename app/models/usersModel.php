@@ -26,6 +26,15 @@ class UsersModel {
         return $userQuery;
     }
 
+    function getUserByUserName($username){
+        $userQuery = $this->connection->prepare('SELECT * FROM users WHERE username=:username LIMIT 1;');
+        $userQuery->execute([
+            ':username'=>$username
+        ]);
+
+        return $userQuery;
+    }
+
     function getLastId(){
         return $this->connection->lastInsertId();
     }

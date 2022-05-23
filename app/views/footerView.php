@@ -9,7 +9,7 @@ class FooterView
                      <footer class="footer">
                         <div class="content has-text-centered">
                             <p>
-                                Lorem ipsum atd footer
+                                Made by Adam Kubina for 4iz278
                             </p>
                         </div>
                     </footer>
