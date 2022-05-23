@@ -1,0 +1,16 @@
+html,
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body > footer {
+    margin-top: auto;
+}
+nav {
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+.panel{
+    height: 100%;
+}
