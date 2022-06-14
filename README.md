@@ -12,3 +12,5 @@ For graphs I used CanvaJS library, frontend is styled with Bulma.
 The app is secured against SQL injections, XSS attacks.
 
 The user credentials for mysql are not valid :)
+
+![powerlog](https://user-images.githubusercontent.com/87360961/173612606-0f56a857-8841-4e16-99ad-11f61f42a41c.png)
