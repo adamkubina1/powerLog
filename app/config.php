@@ -5,6 +5,7 @@ session_start();
 //const DB_NAME = 'kuba10';
 //const DB_USERNAME = 'kuba10';
 //const DB_PASSWORD = 'Aidohn3ho9Yu3Eiy3g';
+//NOT VALID CREDENTIALS
 
 const BASE_URL = '/~kuba10/powerLog-4iz278';
 
